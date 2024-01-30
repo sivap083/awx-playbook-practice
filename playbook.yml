@@ -5,7 +5,7 @@
   tasks:
     - name: Install geerlingguy.docker role
       ansible.builtin.command:
-        cmd: "ansible-galaxy role install geerlingguy.docker"
+        cmd: "ansible-galaxy install geerlingguy.docker -p ./roles"
       become: true
 
 - name: Install Docker role to linux server
