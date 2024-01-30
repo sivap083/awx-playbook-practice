@@ -1,12 +1,10 @@
 ---
-- name: Uninstall Apache Web Server
+- name: Stop Apache Web Server
   hosts: linux_server
-  roles:
-    - name: geerlingguy.apache
-      vars:
-        apache_remove_default_vhost: true
-        apache_remove_default_conf: true
-        apache_remove_default_index: true
-        apache_remove_default_ssl_cert: true
-        apache_service_state: stopped
-        apache_service_enabled: no
+  become: yes
+
+  tasks:
+    - name: Stop Apache service
+      systemd:
+        name: httpd
+        state: stopped
