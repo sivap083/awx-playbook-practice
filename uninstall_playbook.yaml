@@ -2,7 +2,7 @@
 - name: Uninstall Apache Web Server
   hosts: linux_server
   roles:
-    - geerlingguy.apache
+    - name: geerlingguy.apache
       vars:
         apache_remove_default_vhost: true
         apache_remove_default_conf: true
