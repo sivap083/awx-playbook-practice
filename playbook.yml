@@ -1,0 +1,7 @@
+---
+- name: Ping the Linux machine
+  hosts: linux_server
+  become: yes
+  tasks:
+    - name: Ping the machine
+      ping:
