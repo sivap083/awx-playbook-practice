@@ -1,11 +1,11 @@
 ---
-- name: Install apache role from Ansible Galaxy
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Install geerlingguy.apache role
-      ansible.builtin.command:
-        cmd: "ansible-galaxy install geerlingguy.apache -p ./roles"
+#- name: Install apache role from Ansible Galaxy
+#  hosts: localhost
+#  gather_facts: false
+#  tasks:
+#    - name: Install geerlingguy.apache role
+#      ansible.builtin.command:
+#        cmd: "ansible-galaxy install geerlingguy.apache -p ./roles"
 
 - name: Install apache role to linux server
   hosts: linux_server
