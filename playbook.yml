@@ -1,7 +1,10 @@
 ---
-- name: Ping the Linux machine
+- name: Install Docker role from Galaxy
   hosts: linux_server
   become: yes
-  tasks:
-    - name: Ping the machine
-      ping:
+  roles:
+    - name: geerlingguy.docker
+      version: 7.0.2
+
+
+
