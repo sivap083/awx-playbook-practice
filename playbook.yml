@@ -1,17 +1,17 @@
 ---
-- name: Install Docker role from Ansible Galaxy
+- name: Install apache role from Ansible Galaxy
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Install geerlingguy.docker role
+    - name: Install geerlingguy.apache role
       ansible.builtin.command:
-        cmd: "ansible-galaxy install geerlingguy.docker -p ./roles"
+        cmd: "ansible-galaxy install geerlingguy.apache -p ./roles"
 
-- name: Install Docker role to linux server
+- name: Install apache role to linux server
   hosts: linux_server
   become: yes
   tasks:
-    - name: Include geerlingguy.docker role
+    - name: Include geerlingguy.apache role
       ansible.builtin.import_role:
-        name: geerlingguy.docker
+        name: geerlingguy.apache
       become: true
