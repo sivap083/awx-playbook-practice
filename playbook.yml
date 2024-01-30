@@ -3,7 +3,7 @@
   hosts: linux_server
   become: yes
   roles:
-    - role: geerlingguy.docker
+    - name: geerlingguy.docker
       version: 7.0.2
 
 
