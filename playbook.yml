@@ -1,9 +1,19 @@
 ---
-- name: Install Docker role from Galaxy
+- name: Install Docker role from Ansible Galaxy
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Install geerlingguy.docker role
+      ansible.builtin.command:
+        cmd: "ansible-galaxy role install geerlingguy.docker"
+      become: true
+      
+- name: Install Docker role to linux server
   hosts: linux_server
   become: yes
   roles:
     - name: geerlingguy.docker
+      src: geerlingguy.docker
       version: 7.0.2
 
 
